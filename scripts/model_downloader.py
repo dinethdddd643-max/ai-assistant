@@ -72,8 +72,8 @@ class SetupApp(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("AI Assistant — Setup")
-        self.geometry("720x640")
-        self.resizable(False, False)
+        self.geometry("720x750")
+        self.resizable(True, True)
         self.configure(bg="#1e1e2e")
 
         self.log_queue = queue.Queue()          # ← NEW: safe communication

@@ -5,12 +5,11 @@ import os
 
 app = Flask(__name__)
 
-# ── Config ────────────────────────────────────────────────────────────────────
-DB_PATH    = os.path.join(os.path.dirname(__file__), "assistant.db")
-MODEL_DIR  = os.path.join(os.path.dirname(__file__), "models")
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 
-# Read launch config written by installer
-CONFIG_PATH = os.path.join(os.path.dirname(__file__), "launch_config.txt")
+DB_PATH     = os.path.join(BASE_DIR, "assistant.db")
+MODEL_DIR   = os.path.join(BASE_DIR, "models")
+CONFIG_PATH = os.path.join(BASE_DIR, "launch_config.txt")
 
 def read_config():
     cfg = {"model": None, "gpu_layers": 0, "n_ctx": 4096}
